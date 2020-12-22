@@ -1,0 +1,60 @@
+.root {
+    display: flex;
+    align-items: baseline;
+}
+
+.sub {
+    flex: 0 1 25%;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.main {
+    flex: 0 1 50%;
+}
+
+.side {
+    flex: 0 1 25%;
+    position: sticky;
+    top: 0;
+    right: 0;
+}
+
+.global-nav {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.global-nav .nav-item {
+    display: block;
+    margin: 1rem 1.5rem;
+}
+
+.global-nav .nav-item a {
+    display: block;
+    width: 90%;
+    /*height: 30px;
+    line-height: 30px;*/
+    text-align: center;
+    border-radius: 8px;
+    color: #666;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    transition: 0.15s;
+    text-decoration: none;
+}
+
+.global-nav .nav-item.active a, .global-nav .nav-item a:hover {
+    background-color: #D03C56;
+    color: #FFF;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
