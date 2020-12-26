@@ -3,18 +3,18 @@
 {% block header %}
     <div class="jumbotron">
     <h1 class="display-4">TWclone</h1>
-    <p class="lead">タイムライン</p>
+    <p class="lead">ホーム</p>
     <hr class="my-4">
     {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'create' %}" role="button">新たに投稿する</a> {% endcomment %}
     </div> 
 {% endblock header %}
 
-{% block content %}
+{% block content %} 
     <div class="sub">
         <nav class="global-nav">
             <ul>
-                <li class="nav-item active"><a href="#">TIMELINE</a></li>
-                <li class="nav-item"><a href="{% url 'home' %}">HOME</a></li>
+                <li class="nav-item"><a href="{% url 'list' %}">TIMELINE</a></li>
+                <li class="nav-item active"><a href="#">HOME</a></li>
                 <li class="nav-item"><a href="#">TOPICS</a></li>
             </ul>
         </nav>
