@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import generic
 from django.contrib.auth.views import LoginView as AuthLoginView
-from .forms import RegistrationForm
+from .forms import RegistrationForm, UpdateProfile
 #from django.contrib.auth import login as auth_login
-from .models import Tweet, Follow
+from .models import Tweet, Follow, TWuser
 # Create your views here.
 
 class LoginView(AuthLoginView):
@@ -37,5 +37,11 @@ class HomeListView(generic.TemplateView):
         Q = Tweet.objects.filter(author=user)
         context = {
             'object_list': Q.order_by('-pub_date'),
+            'TWuser': user,
         }
         return render(self.request,self.template_name,context)
+
+class UpdateProfileView(generic.UpdateView):
+    template_name = 'profile.html'
+    model = TWuser
+    form_class = UpdateProfile

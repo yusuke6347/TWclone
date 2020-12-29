@@ -127,3 +127,5 @@ MEDIA_URL = '/media/'
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/list/'
 LOGOUT_REDIRECT_URL = ''
+
+AUTH_USER_MODEL = 'Board.TWuser'

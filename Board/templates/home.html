@@ -5,6 +5,17 @@
     <h1 class="display-4">TWclone</h1>
     <p class="lead">ホーム</p>
     <hr class="my-4">
+    <a href="{% url 'profile' TWuser.pk %}">プロフィール設定</a>
+    {% if TWuser.icon %}
+        <div class="icon-container">
+            <img src="{{TWuser.icon.url}}">
+        </div>
+    {% endif %}
+    {% if TWuser.name %}
+        <p class="name">{{TWuser.name}}</p>
+    {% else %}
+        <p class="name">名前が未設定です</p>
+    {% endif %}
     {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'create' %}" role="button">新たに投稿する</a> {% endcomment %}
     </div> 
 {% endblock header %}
