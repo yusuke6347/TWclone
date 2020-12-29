@@ -26,6 +26,11 @@
         {% for item in object_list%}
         <li class="timeline-body">
           {% comment %} <h6 class="card-title">{{item.likes}}いいね</h6> {% endcomment %}
+          {% if item.author.icon %}
+            <a href="{% url 'other' item.author %}" class="timeline-header"><img src="{{item.author.icon.url}}">{{item.author}}</a>
+          {% else %}
+            <a href="{% url 'other' item.author %}" class="timeline-header">{{item.author}}</a>
+          {% endif %}
           <a href="{% url 'detail' item.pk %}" class="timeline-link">{{item.content}}</a>
         </li>
         {% endfor %}

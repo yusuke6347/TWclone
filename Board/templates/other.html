@@ -3,9 +3,17 @@
 {% block header %}
     <div class="jumbotron">
     <h1 class="display-4">TWclone</h1>
-    <p class="lead">ホーム</p>
+    <p class="lead">{{TWuser.username}}</p>
+    <form action=""></form>
+    {% ifequal isFollow False %}
+        <a href="{% url 'create_follow' TWuser.username %}" class="btn btn-primary">フォローする</a>
+        {% comment %} <button class="follow" name="follow" type="submit">フォローする</button> {% endcomment %}
+    {% else %}
+        <a href="{% url 'delete_follow' TWuser.username %}" class="btn btn-primary">フォロー解除</a>
+        {% comment %} <button class="delete-follow" name="delete-follow" type="submit">フォロー解除</button> {% endcomment %}
+    {% endifequal %}
     <hr class="my-4">
-    <a href="{% url 'profile' TWuser.pk %}">プロフィール設定</a>
+    {% comment %} <a href="{% url 'profile' TWuser.pk %}">プロフィール設定</a> {% endcomment %}
     {% if TWuser.icon %}
         <div class="header-icon-container">
             <img src="{{TWuser.icon.url}}">
@@ -25,7 +33,7 @@
         <nav class="global-nav">
             <ul>
                 <li class="nav-item"><a href="{% url 'list' %}">TIMELINE</a></li>
-                <li class="nav-item active"><a href="#">HOME</a></li>
+                <li class="nav-item"><a href="{% url 'home' %}">HOME</a></li>
                 <li class="nav-item"><a href="{% url 'all_list' %}">TOPICS</a></li>
             </ul>
         </nav>
