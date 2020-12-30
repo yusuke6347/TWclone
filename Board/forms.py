@@ -13,6 +13,8 @@ class CreateTweet(forms.ModelForm):
     class Meta:
         model = Tweet
         exclude = ('pub_date','likes',)
+        widgets = {'author': forms.HiddenInput()}
+
 
 class UpdateProfile(forms.ModelForm):
 
@@ -20,8 +22,9 @@ class UpdateProfile(forms.ModelForm):
         model = TWuser
         fields = ('name','icon')
 
-class CreateOrDeleteFollow(forms.ModelForm):
 
-    class Meta:
-        model = Follow
-        fields = '__all__'
+# class CreateOrDeleteFollow(forms.ModelForm):
+
+#     class Meta:
+#         model = Follow
+#         fields = '__all__'
