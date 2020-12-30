@@ -45,12 +45,19 @@ button {
     letter-spacing: 0.1em;
 }
 
-.page-header a{
-    display: block;
-    width: 100px;
-    height: 50px;
+.page-header {
+    width: 100%;
+    height: 100px;
     padding: 10px;
-    text-align: center;
+}
+
+.a1{
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.a2{
     position: absolute;
     bottom: 0;
     right: 0;
@@ -112,6 +119,14 @@ button {
 .page-footer a {
     color: #fff;
     text-decoration: none;
+}
+
+.page-header{
+    background-color: gray;
+}
+
+.btn{
+    color: white;
 }
 
 /* Clearfix */
