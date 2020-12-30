@@ -2,6 +2,11 @@ body{
     font-family: Arial,sans-serif;
 }
 
+.navbar{
+    position: sticky;
+    top: 0;
+}
+
 .root {
     display: flex;
     align-items: baseline;
@@ -52,6 +57,16 @@ body{
 .global-nav .nav-item.active a, .global-nav .nav-item a:hover {
     background-color: #D03C56;
     color: #FFF;
+}
+
+/* follow */
+
+.delete-follow{
+    background-color: red;
+}
+
+.delete-follow:hover{
+    background-color: crimson;
 }
 
 /* timeline */
@@ -121,3 +136,49 @@ img{
 .clearfix:after {
     clear: both;
 }
+
+/* mortal */
+
+  
+  /* モーダルCSSここから */
+  .modalArea {
+    visibility: hidden; /* displayではなくvisibility */
+    opacity : 0;
+    position: fixed;
+    z-index: 5; /* サイトによってここの数値は調整 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+  }
+  
+  .modalBg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30,30,30,0.9);
+  }
+  
+  .modalWrapper {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform:translate(-50%,-50%);
+    width: 70%;
+    max-width: 500px;
+    padding: 10px 30px;
+    background-color: #fff;
+  }
+  
+  .closeModal {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+  
+  .is-show { /* モーダル表示用クラス */
+    visibility: visible;
+    opacity : 1;
+  }
+  /* モーダルCSSここまで */

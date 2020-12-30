@@ -9,11 +9,10 @@
         <a href="{% url 'create_follow' TWuser.username %}" class="btn btn-primary">フォローする</a>
         {% comment %} <button class="follow" name="follow" type="submit">フォローする</button> {% endcomment %}
     {% else %}
-        <a href="{% url 'delete_follow' TWuser.username %}" class="btn btn-primary">フォロー解除</a>
+        <a href="{% url 'delete_follow' TWuser.username %}" class="btn btn-primary delete-follow">フォロー解除</a>
         {% comment %} <button class="delete-follow" name="delete-follow" type="submit">フォロー解除</button> {% endcomment %}
     {% endifequal %}
     <hr class="my-4">
-    {% comment %} <a href="{% url 'profile' TWuser.pk %}">プロフィール設定</a> {% endcomment %}
     {% if TWuser.icon %}
         <div class="header-icon-container">
             <img src="{{TWuser.icon.url}}">
@@ -35,6 +34,8 @@
                 <li class="nav-item"><a href="{% url 'list' %}">TIMELINE</a></li>
                 <li class="nav-item"><a href="{% url 'home' %}">HOME</a></li>
                 <li class="nav-item"><a href="{% url 'all_list' %}">TOPICS</a></li>
+                <li class="nav-item"><a class="iframe" href="{% url 'tweet' %}">Tweet</a></li>
+                <li class="nav-item"><a href="{% url 'tweet' %}">Tweet(ローカル)</a></li>
             </ul>
         </nav>
     </div>

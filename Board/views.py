@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import generic
 from django.contrib.auth.views import LoginView as AuthLoginView
+from django.contrib.auth.views import LogoutView as AuthLogoutView
 from django.urls import reverse_lazy
-from .forms import RegistrationForm, UpdateProfile
+from .forms import RegistrationForm, UpdateProfile, CreateTweet
 #from django.contrib.auth import login as auth_login
 from .models import Tweet, Follow, TWuser
 # Create your views here.
@@ -11,6 +12,9 @@ from .models import Tweet, Follow, TWuser
 class LoginView(AuthLoginView):
     template_name = 'login.html'
     form_class = RegistrationForm
+
+class LogoutView(AuthLogoutView):
+    template_name ='logout.html'
 
 class AllListView(generic.ListView):
     template_name = 'all_list.html'
@@ -94,3 +98,11 @@ def delete_follow(request,follow_username):
     Follow.objects.filter(follow_user=user,self_user=request.user).delete()
     return redirect('home')
 
+class CreateTweetView(generic.CreateView):
+    template_name='tweet.html'
+    form_class=CreateTweet
+    success_url=reverse_lazy('home')
+    def get_initial(self):
+        initial = super().get_initial()
+        initial["author"] = self.request.user
+        return initial

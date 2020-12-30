@@ -1,3 +1,4 @@
+//js 動作確認用
 $(function(){
     $('#typo')
     .on('mouseover',function(){

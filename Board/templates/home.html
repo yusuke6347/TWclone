@@ -16,7 +16,6 @@
     {% else %}
         <p class="name">名前が未設定です</p>
     {% endif %}
-    {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'create' %}" role="button">新たに投稿する</a> {% endcomment %}
     </div> 
 {% endblock header %}
 
@@ -27,6 +26,8 @@
                 <li class="nav-item"><a href="{% url 'list' %}">TIMELINE</a></li>
                 <li class="nav-item active"><a href="#">HOME</a></li>
                 <li class="nav-item"><a href="{% url 'all_list' %}">TOPICS</a></li>
+                <li class="nav-item"><a class="iframe" href="{% url 'tweet' %}">Tweet</a></li>
+                <li class="nav-item"><a href="{% url 'tweet' %}">Tweet(ローカル)</a></li>
             </ul>
         </nav>
     </div>
