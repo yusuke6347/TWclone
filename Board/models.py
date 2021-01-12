@@ -16,6 +16,7 @@ class Tweet(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(TWuser,on_delete=models.CASCADE)
     likes = models.IntegerField(default=0)
+    #like_user_list = models.ManyToManyField(TWuser)
     def __str__(self):
         return self.content
 

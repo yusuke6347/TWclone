@@ -54,6 +54,7 @@
             <a href="{% url 'other' item.author %}" class="timeline-header">{{item.author}}</a>
           {% endif %}
           <a href="{% url 'detail' item.pk %}" class="timeline-link">{{item.content}}</a>
+          <a href="#" class="timeline-icon"><div class="heart icon"></div></a>
           {% comment %} <h6 class="card-title">{{item.likes}}いいね</h6> {% endcomment %}
         </li>
         {% endfor %}

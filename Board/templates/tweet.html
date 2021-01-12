@@ -17,11 +17,10 @@
 
 <body>
     <form class="hoge" action="" method="POST">
-    {% for field in form %}
-    <p>{{field}}</p>
-    {% endfor %}
-    {% csrf_token %}
-    <p><input type="submit" value="SET"></p>
+      {{form.as_p}}
+      {% csrf_token %}
+      <p><input type="submit" value="Set"></p>
+    </form>
 
 
     <!-- Optional JavaScript; choose one of the two! -->

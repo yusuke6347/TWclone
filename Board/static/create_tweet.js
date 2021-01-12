@@ -6,3 +6,9 @@ $(function() {
         opacity: 0.7
     });
 });
+
+$('.icon').click(function(){
+    $(this)
+      .toggleClass('heart')
+      .toggleClass('heart-solid');
+  })

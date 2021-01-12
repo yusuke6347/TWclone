@@ -1,3 +1,11 @@
+/* get the styles for both icon*/
+@import "https://cssicon.space/css/icons.css";
+
+.icon, .icon:before, .icon:after, .icon i, .icon i:before, .icon i:after { 
+  transition: all 0.4s ease;
+}
+/* this is merely a rough demo to showcase the potential of CSS ICON on animation, more crafted animation can go from here */
+
 body{
     font-family: Arial,sans-serif;
 }
@@ -126,6 +134,15 @@ body{
 
 img{
     max-width: 100%;
+}
+
+/* fv */
+.timeline-icon{
+    display: block;
+    padding: 5% 5% 10% 5%;
+    color: inherit;
+    text-decoration: none;
+    word-wrap:break-word; 
 }
 
 /* clear-fix */
